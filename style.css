@@ -1,0 +1,119 @@
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a202c; /* Tailwind's gray-900 */
+    color: #e2e8f0; /* Tailwind's gray-300 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Fixes for mobile screen area */
+    min-height: 100vh;
+    min-height: -webkit-fill-available; /* For iOS Safari */
+    margin: 0;
+    overflow: hidden;
+    touch-action: none; /* Prevents scrolling on touch devices */
+}
+.game-container, .main-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Better vertical distribution */
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+canvas {
+    background-color: #2d3748; /* Tailwind's gray-800 */
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain a square shape */
+}
+
+.d-pad {
+    display: grid;
+    grid-template-areas:
+        ". up ."
+        "left center right"
+        ". down .";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 180px;
+    height: 180px;
+    margin-top: 1rem;
+}
+.d-pad-btn {
+    background-color: rgba(74, 85, 104, 0.8); /* gray-600 with transparency */
+    border: 2px solid #2d3748;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    user-select: none;
+}
+.d-pad-btn:active {
+    background-color: #718096; /* gray-500 */
+}
+#up { grid-area: up; border-radius: 0.75rem 0.75rem 0 0; }
+#down { grid-area: down; border-radius: 0 0 0.75rem 0.75rem; }
+#left { grid-area: left; border-radius: 0.75rem 0 0 0.75rem; }
+#right { grid-area: right; border-radius: 0 0.75rem 0.75rem 0; }
+.d-pad-center {
+    grid-area: center;
+    background-color: rgba(74, 85, 104, 0.8);
+     border: 2px solid #2d3748;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #2d3748;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    width: 90%;
+    max-width: 350px;
+}
+.mode-btn {
+    transition: all 0.2s ease;
+}
+.selected-mode {
+    background-color: #4299e1; /* Tailwind's blue-500 */
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(66, 153, 225, 0.5);
+}
+/* Bangladeshi Flag Styles */
+.flag-bd {
+    width: 60px;
+    height: 36px;
+    background-color: #006a4e; /* Bangladesh Green */
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.flag-bd-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #f42a41; /* Bangladesh Red */
+    border-radius: 50%;
+}
+

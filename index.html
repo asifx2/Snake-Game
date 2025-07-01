@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Fruits Snake</title>
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Menu -->
+    <div id="mainMenu" class="main-menu-container">
+        <div class="modal-content" style="display: block;">
+            <h1 class="text-4xl font-bold mb-4 text-white">Fruits Snake</h1>
+            <p class="text-gray-400 mb-6">Select a difficulty</p>
+            <div class="flex justify-center space-x-2 mb-8">
+                <button id="easyBtn" class="mode-btn font-semibold py-2 px-6 rounded-full bg-gray-600">Easy</button>
+                <button id="normalBtn" class="mode-btn font-semibold py-2 px-6 rounded-full bg-gray-600 selected-mode">Normal</button>
+                <button id="hardBtn" class="mode-btn font-semibold py-2 px-6 rounded-full bg-gray-600">Hard</button>
+            </div>
+            <button id="startButton" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-xl">
+                Start Game
+            </button>
+            <!-- Flag and Credit Section -->
+            <div class="mt-8 flex flex-col items-center space-y-3">
+                <div class="flag-bd">
+                    <div class="flag-bd-circle"></div>
+                </div>
+                <p class="text-sm text-gray-400">Made By Asif</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Game Screen -->
+    <div id="gameContainer" class="game-container" style="display: none;">
+        <div class="w-full flex justify-between items-center px-2">
+            <h1 class="text-2xl font-bold text-white">Fruits Snake</h1>
+             <button id="exitButton" class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded-lg text-sm">Exit</button>
+            <div class="text-xl font-semibold bg-gray-700 px-4 py-2 rounded-lg">
+                Points: <span id="score">0</span>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="d-pad">
+            <button id="up" class="d-pad-btn">▲</button>
+            <button id="left" class="d-pad-btn">◀</button>
+            <div class="d-pad-center"></div>
+            <button id="right" class="d-pad-btn">▶</button>
+            <button id="down" class="d-pad-btn">▼</button>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-3xl font-bold mb-2 text-red-500">Game Over</h2>
+            <p class="text-lg mb-4">Final Score: <span id="finalScore">0</span></p>
+            <div class="flex flex-col space-y-3">
+                <button id="restartButton" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg text-lg">
+                    Play Again
+                </button>
+                <button id="menuButton" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg text-lg">
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tone.js for sound -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
